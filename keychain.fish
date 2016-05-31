@@ -1,7 +1,7 @@
 # extracted from https://bugs.funtoo.org/browse/FL-2006
 
 function init --on-event init_keychain
-  if not available keychain
+  if not type -q keychain
     echo "🔑  Please install 'keychain' first!"
   else
     if status --is-interactive
