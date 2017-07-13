@@ -21,6 +21,22 @@ And add the package to your Wahoo:
 wa g keychain
 ```
 
+## Usage
+
+The package adds a snippet into fish's `conf.d` directory so keychain
+is loaded automatically.  By default keychain is started only with the
+`--quiet` option, but you can customise those by setting
+`keychain_init_args` variable, e.g.:
+
+```fish
+set -U keychain_init_args --quiet --confhost --timeout 60 --agents ssh,gpg
+# to also load a key by default
+set -U keychain_init_args --quiet --agents ssh,gpg id_ed25519
+```
+
+Note that `--eval` option is always passed to keychain so it generates
+output that can be sourced by the shell.
+
 # License
 
 [MIT](http://opensource.org/licenses/MIT) © [Tom Hensel][Author]
