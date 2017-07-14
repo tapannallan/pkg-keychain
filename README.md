@@ -1,29 +1,49 @@
-[![](https://img.shields.io/badge/Wahoo-Package-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Oh--My--Fish-pkg--keychain-00b0ff.svg?style=flat-square)][Oh-My-Fish]
+[![](https://img.shields.io/badge/fisherman-jitakirin%2Fpkg--keychain-00b0ff.svg?style=flat-square)][fisherman]
 ![](https://img.shields.io/badge/License-MIT-707070.svg?style=flat-square)
 
-# :key: [_keychain_](http://www.funtoo.org/Keychain)
+# :key: [_keychain_][Keychain]
 > Keychain helps you to manage SSH and GPG keys in a convenient and secure manner. Download and learn how to use Keychain on your Linux, Unix or MacOS system.
 
-Keychain for [Wahoo][Wahoo] / [fish](fishshell.com).
+[Keychain] for [fish] ([Oh-My-Fish] / [fisherman]).
 
 ## Install
-> _Note_: You need to have `keychain` installed prior to loading Wahoo.
+> _Note_: You need to have [Keychain] installed prior to adding it to [fish].
 
-Install `keychain` using homebrew:
+Install [Keychain] using homebrew:
 
 ```fish
 brew install keychain
 ```
 
-And add the package to your Wahoo:
+or your distro package manager:
 
 ```fish
-wa g keychain
+# Debian / Ubuntu
+apt install keychain
+
+# Fedora
+dnf install keychain
+
+# OpenSUSE
+zypper install keychain
+```
+
+And add the package to your [fish] using [Oh-My-Fish]:
+
+```fish
+omf install https://github.com/jitakirin/pkg-keychain
+```
+
+or [fisherman]:
+
+```fish
+fisher jitakirin/pkg-keychain
 ```
 
 ## Prereq
 
-Keychain (incorrectly) depends on the `SHELL` variable to decide on the
+[Keychain] (incorrectly) depends on the `SHELL` variable to decide on the
 format to output environment variables in.
 
 This variable is normally set by `login(1)` based on shell set in the
@@ -59,4 +79,7 @@ output that can be sourced by the shell.
 [MIT](http://opensource.org/licenses/MIT) © [Tom Hensel][Author]
 
 [Author]: https://github.com/gretel
-[Wahoo]: https://github.com/bucaran/wahoo
+[Keychain]: http://www.funtoo.org/Keychain
+[fish]: fishshell.com
+[Oh-My-Fish]: https://github.com/oh-my-fish/oh-my-fish
+[fisherman]: https://fisherman.github.io/
