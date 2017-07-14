@@ -21,6 +21,22 @@ And add the package to your Wahoo:
 wa g keychain
 ```
 
+## Prereq
+
+Keychain (incorrectly) depends on the `SHELL` variable to decide on the
+format to output environment variables in.
+
+This variable is normally set by `login(1)` based on shell set in the
+user's passwd entry and is meant to define user's preferred shell.
+
+Although it may not be exactly right, given that there are other
+programs with this behaviour (e.g. docker-machine) it's probably better
+to set this variable to point to fish when running fish, like:
+
+```fish
+set -gx SHELL $__fish_bin_dir/fish
+```
+
 ## Usage
 
 The package adds a snippet into fish's `conf.d` directory so keychain
@@ -30,6 +46,7 @@ is loaded automatically.  By default keychain is started only with the
 
 ```fish
 set -U keychain_init_args --quiet --confhost --timeout 60 --agents ssh,gpg
+
 # to also load a key by default
 set -U keychain_init_args --quiet --agents ssh,gpg id_ed25519
 ```
