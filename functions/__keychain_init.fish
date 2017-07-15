@@ -7,5 +7,5 @@ function __keychain_init
     set keychain_args $keychain_init_args
   end
 
-  keychain --eval $keychain_args | source
+  env SHELL=$__fish_bin_dir/fish keychain --eval $keychain_args | source
 end
